@@ -1,24 +1,22 @@
 package easy;
 
-import java.util.Arrays;
+/*
+Question: Given an array of 0s and 1s find the maximum number of maximum consecutive 1s.
+Solution: Using two counters "count" and "Max" for keepping the count of consecutive 1s and max count respectively
+*/
 
 public class MaxConsecOnes {
     public static void main(String[] args) {
-        int[] numbers = {1,1,1,1,1,1};
-        Arrays.sort(numbers);
-
-
+        int[] numbers = {1,1,0,1,1,1,0};
         System.out.println("Consecutive Ones -->"+ findMaxConsecOnes(numbers));
     }
 
     static int findMaxConsecOnes(int[] nums){
         int count = 0;
         int max = count;
-        Integer letter;
-        for (int i = 0; i<nums.length; i++){
+        for (int i = 0; i<nums.length-1; i++){
             if(nums[i]==1){
                 count++;
-                letter = nums[i];
                 if (max < count){
                     max = count;
                 }
