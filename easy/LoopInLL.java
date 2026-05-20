@@ -1,8 +1,10 @@
 package easy;
 
+import pojo.LinkedList;
+import pojo.ListNode;
 /* Detect a loop in a LinkedList.
 This implementation uses Floyd's algorithm which uses two pointers
-to travers the linked list. It has time complexity of O(n).
+to traverse the linked list. It has time complexity of O(n).
 */
 
 //driver class
@@ -17,38 +19,14 @@ public class LoopInLL {
 
         linkedList.head.next.next.next = linkedList.head;
 
-        linkedList.detect_loop();
+        detect_loop(linkedList.head);
 
     }
-}
 
-
-//linked list class
-class LinkedList{
-
-    //head of the linked list
-    Node head;
-
-    //inner class for node structure
-    class Node{
-
-        int data;
-        Node next;
-    }
-
-    //method to push the nodes
-    void push(int data){
-        Node newNode = new Node();
-        newNode.data = data;
-        newNode.next = head;
-        head = newNode;
-    }
-
-    //method which detects loops
-    void detect_loop(){
+    static void detect_loop(ListNode head){
 
         //initializing two pointers to head of the linked list
-        Node slowPtr = head, fastPtr = head;
+        ListNode slowPtr = head, fastPtr = head;
 
         //flag to mark as loop detected
         boolean loopFlag = false;
