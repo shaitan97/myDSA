@@ -11,12 +11,12 @@ public class BinaryTreeQueueBFS {
         queue.offer(root);
         while(!queue.isEmpty()) {
             TreeNode currentNode = queue.poll();
-            System.out.print(currentNode.getVal() + " ");
-            if (currentNode.getLeft() != null) {
-                queue.offer(currentNode.getLeft());
+            System.out.print(currentNode.left + " ");
+            if (currentNode.left != null) {
+                queue.offer(currentNode.left);
             }
-            if (currentNode.getRight() != null) {
-                queue.offer(currentNode.getRight());
+            if (currentNode.left != null) {
+                queue.offer(currentNode.left);
             }
         }
     }
